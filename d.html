@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Microsoft</title>
+    <script src="https://kit.fontawesome.com/88835bcb45.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="m-auto">
+        <nav class="flex mb-4 navs" id="navv">
+            <ul class="text-xs mt-1 nav" id="dis_fl">
+                <img src="mic.png" width="100px" class="ml-3 logo" id="log" alt="">
+                <div id="uni">
+                    <li class="ml-7 ele hi">About</li>
+                    <li class="ml-7 ele hi">Products</li>
+                    <li class="ml-7 ele hi">Credits</li>
+                    <li class="ml-7 ele hi">Microsoft</li>
+                    <li class="ml-7 ele hi">Surface Pro</li>
+                    <li class="ml-7 ele hi">Hoime</li>
+
+                    <div class="inputi mt-5" id="vis">
+                        <li style="display: none;" id="inp"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="placeholder-black rounded-sm p-1" style="outline: none; background-color: #F8F9FA;" placeholder="Search">
+                    </div>
+                </div>
+            </ul>
+            <div class="ml-auto icos mt-1" id="cio">
+                <i class="fa-solid fa-magnifying-glass mr-4"></i>
+                <i class="fa-solid fa-user mr-4"></i>
+                <i class="fa-solid fa-cart-shopping mr-4"></i>
+            </div>
+            <i class="fa-solid fa-bars bar text-black ele" id="ba" onclick="show_menu()"></i>
+        </nav>
+        <main>
+            <div class="ma flex justify-center m-auto head" style="background-color: white;">
+                <div class="w-4/5 p-16 pt-37 pb-37 int justify-center">
+                    <h1 class="Microsoft text-6xl mb-7" style="font-family: 'Poppins';">Microsoft</h1>
+                    <p style="font-family: 'Poppins';">
+                        First Let Me Tell You The History of This Big Boy.
+                        The latest Android release delivers even more personal, safe and effortless experiences on your
+                        device. With a redesigned UI, new privacy features and more.
+                        The latest Android release delivers even more personal, safe and effortless experiences on your
+                        device. With a redesigned UI, new privacy features and more
+                    </p>
+                </div>
+                <div>
+                    <img src="gittu.jpg" height="100%" alt="">
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+<style>
+    @media screen and (max-width: 1098px) {
+        .head {
+            display: block;
+            margin: auto;
+        }
+
+        .int {
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: 887px) {
+        .logo {
+            display: none;
+        }
+
+        ul {
+            display: flex;
+        }
+    }
+
+    ul {
+        display: flex;
+    }
+
+    nav {
+        padding-top: 12px;
+        background-color: #F8F9FA;
+        padding-bottom: 12px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+    .inputi{
+        display: flex;
+        border: .3px solid black;
+    }
+</style>
+<script>
+    var vi = document.getElementById("vis");
+    var inps = document.getElementById("inp");
+    var eles = document.getElementsByTagName("li");
+    var dis = document.getElementById("dis_fl");
+    var d = document.getElementById("log");
+    var b = document.getElementById("uni");
+    var c = document.getElementById("cio");
+    var a = document.getElementById("ba");
+    if (matchMedia) {
+        const mq = window.matchMedia("(min-width: 660px)");
+        mq.addListener(WidthChange);
+        WidthChange(mq);
+    }
+
+    // media query change
+    function WidthChange(mq) {
+        if (mq.matches) {
+            a.style.display = "none";
+            b.style.display = "flex";
+            c.style.display = "flex";
+            dis.style.display = "flex";
+            inps.style.display = "none";
+            Array.from(document.getElementsByTagName("li"), (elem) => {
+                elem.style.marginLeft = 0;
+                elem.style.marginLeft = "28px";
+                elem.style.marginTop = "1px";
+            });
+            // window width is at least 500px
+        } else {
+            a.style.marginTop = "3.5px";
+            a.style.marginLeft = "auto";
+            a.style.marginRight = "7px";
+            d.style.display = "block"
+            b.style.display = "none";
+            c.style.display = "none"
+            a.style.display = "block";
+        }
+
+    }
+
+    function show_menu() {
+        if (b.style.display != "block") {
+            Array.from(document.getElementsByTagName("li"), (elem) => {
+                elem.style.marginLeft = 0;
+                elem.style.marginLeft = "12px";
+                elem.style.marginTop = "17px";
+            });
+            dis.style.display = "block";
+            b.style.display = "block";
+            inps.style.display = "block";
+            inps.style.marginTop = "5px";
+            inps.style.marginBottom = "5px";
+            inps.style.marginLeft = "5px";
+            inps.style.marginRight = "5px";
+            vi.style.marginLeft = "12px";
+            vi.style.borderRadius = "7px"
+        }
+        else if(a.style.display != "none"){
+            b.style.display = "none";
+        }
+    }
+</script>
+
+</html>

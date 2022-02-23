@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body style="background-color: aqua;" id="bod">
+    <div class="main flex bg-black" id="mat" onclick="chg()">
+        <h1 id="head" class="text-white text-center" style="font-family: Poppins;">Background Color : </h1>
+        <h1 id="col" class="text-white text-center" style="font-family: Poppins; color: aqua;">This</h1>
+    </div>
+</body>
+<style>
+    .main {
+        width: 390px;
+        height: 70px;
+        border-radius: 10px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        padding-left: 10px;
+        padding-top: 10px;
+        font-size: xx-large;
+        text-align: center;
+    }
+</style>
+<script>
+    function chg() {
+        var x = Math.floor(Math.random() * 256);
+        var y = Math.floor(Math.random() * 256);
+        var z = Math.floor(Math.random() * 256);
+        var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+        console.log(bgColor);
+
+        document.body.style.background = bgColor;
+        document.getElementById("col").style.color = bgColor;
+    }
+</script>
+
+</html>

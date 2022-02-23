@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div id="main" class="bg-black text-white pt-6">
+        <h1 class="text-3xl" style="font-family: Poppins;">Counter</h1>
+        <h1 class="text-4xl pt-3 pb-3" id="num">0</h1>
+        <div id="buts">
+            <button class="mr-3 ml-3 but" onclick="dec()">Decrease</button>
+            <button class="mr-3 but" onclick="res()">Reset</button>
+            <button class="mr-3 but" onclick="inc()">Increase</button>
+        </div>
+    </div>
+</body>
+<style>
+    #buts {
+        display: flex;
+        justify-content: center;
+    }
+
+    #main {
+        text-align: center;
+        width: 250px;
+        height: 200px;
+        border-radius: 10px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+    .but{
+        border: 1px solid white;
+        border-radius: 5px;
+        padding: 4px;
+        transition-duration: .7s;
+        transition-property: inherit;
+    }
+    .but:hover{
+        background-color: white;
+        color: black;
+    }
+</style>
+<script>
+    var c = document.getElementById("num");
+    function dec() {
+        var val = Number(c.innerHTML);
+        val--;
+        c.innerHTML = val;
+    }
+    function inc(params) {
+        var val = Number(c.innerHTML);
+        val++;
+        c.innerHTML = val;
+    }
+    function res(params) {
+        c.innerHTML = 0;
+    }
+</script>
+</html>
